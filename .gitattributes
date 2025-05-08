@@ -1,0 +1,6 @@
+*.gz filter=lfs diff=lfs merge=lfs -text
+download/*.gz filter=lfs diff=lfs merge=lfs -text
+download/InMeRF_score_hg38_chr1.txt.gz filter=lfs diff=lfs merge=lfs -text
+download/InMeRF_score_hg38_chr2.txt.gz filter=lfs diff=lfs merge=lfs -text
+download/InMeRF_score_hg38_chr3.txt.gz filter=lfs diff=lfs merge=lfs -text
+download/InMeRF_score_hg38_chr4.txt.gz filter=lfs diff=lfs merge=lfs -text
