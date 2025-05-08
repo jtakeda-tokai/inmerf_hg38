@@ -1,0 +1,48 @@
+# InMeRF score with annotation (tab-separated file format)
+Column 1: chromosome number
+Column 2: position on genome
+Column 3: reference nucleotide
+Column 4: altered nucleotide
+Column 5: reference amino acid
+Column 6: altered amino acid
+Column 7: gene symbol (HGNC)
+Column 8: strand (+/-)
+Column 9: gene ID of Ensembl 94
+Column 10: transcript ID of Ensembl 94
+Column 11: protein ID of Ensembl 94
+Column 12: position on amino acid
+Column 13: SIFT rank score of dbNSFP v4.0a
+Column 14: SIFT4G rank score of dbNSFP v4.0a
+Column 15: Polyphen2_HDIV rank score of dbNSFP v4.0a
+Column 16: Polyphen2_HVAR rank score of dbNSFP v4.0a
+Column 17: LRT rank score of dbNSFP v4.0a
+Column 18: MutationTaster rank score of dbNSFP v4.0a
+Column 19: MutationAssessor rank score of dbNSFP v4.0a
+Column 20: FATHMM rank score of dbNSFP v4.0a
+Column 21: PROVEAN rank score of dbNSFP v4.0a
+Column 22: VEST4 rank score of dbNSFP v4.0a
+Column 23: MetaSVM rank score of dbNSFP v4.0a
+Column 24: MetaLR rank score of dbNSFP v4.0a
+Column 25: REVEL rank score of dbNSFP v4.0a
+Column 26: MVP rank score of dbNSFP v4.0a
+Column 27: MPC rank score of dbNSFP v4.0a
+Column 28: PrimateAI rank score of dbNSFP v4.0a
+Column 29: DEOGEN2 rank score of dbNSFP v4.0a
+Column 30: CADD rank score of dbNSFP v4.0a
+Column 31: DANN rank score of dbNSFP v4.0a
+Column 32: fathmm-MKL rank score of dbNSFP v4.0a
+Column 33: fathmm-XF rank score of dbNSFP v4.0a
+Column 34: Eigen rank score of dbNSFP v4.0a
+Column 35: Eigen-PC rank score of dbNSFP v4.0a
+Column 36: GenoCanyon rank score of dbNSFP v4.0a
+Column 37: integrated_fitCons rank score of dbNSFP v4.0a
+Column 38: GERP++ rank score of dbNSFP v4.0a
+Column 39: phyloP100way_vertebrate rank score of dbNSFP v4.0a
+Column 40: phyloP30way_mammalian rank score of dbNSFP v4.0a
+Column 41: phyloP17way_primate rank score of dbNSFP v4.0a
+Column 42: phastCons100way_vertebrate rank score of dbNSFP v4.0a
+Column 43: phastCons30way_mammalian rank score of dbNSFP v4.0a
+Column 44: phastCons17way_primate rank score of dbNSFP v4.0a
+Column 45: SiPhy rank score of dbNSFP v4.0a
+Column 46: bStatistic rank score of dbNSFP v4.0a
+Column 47: InMeRF score
