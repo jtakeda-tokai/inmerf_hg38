@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130959089-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-130959089-5');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>InMeRF about</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  <!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed-->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- header -->
+  <div id="header" class="container">
+    <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand" href=index.html>Top</a>
+      <a class="navbar-brand" href=about.html>About</a>
+      <a class="navbar-brand" href=download.html>Download</a>
+    </div>
+    </nav>
+  </div>
+    
+  <div class="container">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <p>
+InMeRF is a tool to predict the pathogenicity of nonsynonymous SNVs (nsSNVs) using 150 discriminant models independently generated for all possible amino acid (AA) substitutions.
+      </p>
+      <p>
+Publication
+      <ul>
+Please cite: Jun-ichi Takeda, Kentaro Nanatsue, Ryosuke Yamagishi, Mikako Ito, Nobuhiko Haga, Hiromi Hirata, Tomoo Ogi, and Kinji Ohno. “InMeRF: Prediction of pathogenicity of missense variants by individual modeling for each amino acid substitution” <a href=https://doi.org/10.1093/nargab/lqaa038 target=_blank><b><i>NAR Genom Bioinform.</i></b> 2020 May 26;2(2):lqaa038.</a> (<a href=https://pubmed.ncbi.nlm.nih.gov/33543123 target=_blank>PMID: 33543123</a>).
+      </ul>
+      </p>
+      <p>
+Materials and Methods
+      <ol>
+        <li>
+A total of 72,556 pathogenic nsSNVs were extracted from the Human Gene Mutation Database (HGMD) Pro 2015.2 [CLASS = DM (disease-causing mutation)] included in dbNSFP v4.0a.
+        </li>
+        <li>
+A total of 166,161 common nsSNV candidates were extracted from dbNSFP v4.0a based on dbSNP build 151 with at least one minor allelic frequency (MAF) of 1000Gp3_AF, UK10K_AF, ExAC_AF, gnomAD_exomes_AF and gnomAD_genomes_AF is > 0.001. We then filtered 162,918 common nsSNVs by removing nsSNVs included in HGMD and in dbNSFP v4.0a with “clinvar_clnsig = Pathogenic or Likely_pathogenic”.
+        </li>
+        <li>
+Each nsSNV was classified into one of 150 different nonsynonymous AA substitutions. The pathogenic nsSNVs were sorted in ascending order of MAF, and the common nsSNVs were sorted in descending order of MAF. The same numbers of pathogenic and common nsSNVs were extracted for each AA substitution for random forest (RF) modeling.
+        </li>
+        <li>
+Among 37 tools in dbNSFP v4.0a, nsSNV coverages of 3 tools were very low in either pathogenic or common nsSNVs. Therefore, rank scores of the remaining 34 tools in dbNSFP v4.0a were used as feature values (Table 1). To make RF models, nsSNVs that lacked one or more of 34 rank scores in dbNSFP v4.0a were excluded. Then, pathogenic and common nsSNVs were discriminated by using a machine learning library, scikit-learn, on Python version 3.7. Finally, a total of 150 RF models were generated (Figure 1).
+        </li>
+      </ol>
+      </p>
+    </div>
+
+Table 1. 37 tools in dbNSFP v4.0a and their nsSNV coverages in all, pathogenic and common nsSNVs.
+    <table border="1" cellspacing="0">
+      <tr>
+        <th>Tool</th>
+        <th>Type</th>
+        <th>Rate in all nsSNVs<br>(77,195,651)</th>
+        <th>Rate in pathogenic nsSNVs<br>(72,556)</th>
+        <th>Rate in common nsSNVs<br>(162,918)</th>
+        <th>Feature values used for RF models</th>
+      </tr>
+      <tr>
+        <td>SIFT</td>
+        <td rowspan="28">prediction</td>
+        <td>92.65</td>
+        <td>97.31</td>
+        <td>89.62</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>SIFT4G</td>
+        <td>95.63</td>
+        <td>98.12</td>
+        <td>93.46</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>Polyphen2_HDIV</td>
+        <td>87.13</td>
+        <td>92.14</td>
+        <td>80.88</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>Polyphen2_HVAR</td>
+        <td>87.13</td>
+        <td>92.14</td>
+        <td>80.88</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>LRT</td>
+        <td>82.39</td>
+        <td>93.93</td>
+        <td>72.45</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>MutationTaster</td>
+        <td>96.89</td>
+        <td>99.94</td>
+        <td>95.72</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>MutationAssessor</td>
+        <td>82.45</td>
+        <td>89.32</td>
+        <td>76.07</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>FATHMM</td>
+        <td>88.83</td>
+        <td>98.27</td>
+        <td>87.35</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>PROVEAN</td>
+        <td>93.15</td>
+        <td>98.29</td>
+        <td>90.39</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>VEST4</td>
+        <td>97.31</td>
+        <td>99.35</td>
+        <td>95.72</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>MetaSVM</td>
+        <td>95.82</td>
+        <td>99.40</td>
+        <td>94.08</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>MetaLR</td>
+        <td>95.82</td>
+        <td>99.40</td>
+        <td>94.08</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>M-CAP</td>
+        <td>95.90</td>
+        <td>97.39</td>
+        <td><font color="red">37.24</font></td>
+        <td>X</td>
+      </tr>
+      <tr>
+        <td>REVEL</td>
+        <td>95.82</td>
+        <td>99.40</td>
+        <td>94.08</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>MutPred</td>
+        <td>90.22</td>
+        <td>81.09</td>
+        <td><font color="red">6.21</font></td>
+        <td>X</td>
+      </tr>
+      <tr>
+        <td>MVP</td>
+        <td>97.80</td>
+        <td>99.12</td>
+        <td>73.85</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>MPC</td>
+        <td>83.00</td>
+        <td>91.76</td>
+        <td>75.79</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>PrimateAI</td>
+        <td>89.88</td>
+        <td>96.72</td>
+        <td>85.13</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>DEOGEN2</td>
+        <td>91.13</td>
+        <td>94.52</td>
+        <td>86.73</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>CADD</td>
+        <td>99.97</td>
+        <td>100.00</td>
+        <td>100.00</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>DANN</td>
+        <td>99.41</td>
+        <td>100.00</td>
+        <td>100.00</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>fathmm-MKL</td>
+        <td>99.41</td>
+        <td>100.00</td>
+        <td>100.00</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>fathmm-XF</td>
+        <td>92.62</td>
+        <td>86.76</td>
+        <td>92.20</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>Eigen</td>
+        <td>92.49</td>
+        <td>87.62</td>
+        <td>92.02</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>Eigen-PC</td>
+        <td>92.49</td>
+        <td>87.62</td>
+        <td>92.02</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>GenoCanyon</td>
+        <td>99.41</td>
+        <td>100.00</td>
+        <td>100.00</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>integrated_fitCons</td>
+        <td>95.45</td>
+        <td>87.68</td>
+        <td>97.44</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>LINSIGHT</td>
+        <td><font color="red">2.04</font></td>
+        <td><font color="red">0.07</font></td>
+        <td><font color="red">3.52</font></td>
+        <td>X</td>
+      </tr>
+      <tr>
+        <td>GERP++</td>
+        <td rowspan="9">conservation</td>
+        <td>98.95</td>
+        <td>99.98</td>
+        <td>98.51</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>phyloP100way_vertebrate</td>
+        <td>99.99</td>
+        <td>100.00</td>
+        <td>99.97</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>phyloP30way_mammalian</td>
+        <td>99.96</td>
+        <td>100.00</td>
+        <td>99.94</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>phyloP17way_primate</td>
+        <td>99.92</td>
+        <td>100.00</td>
+        <td>99.90</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>phastCons100way_vertebrate</td>
+        <td>99.99</td>
+        <td>100.00</td>
+        <td>99.97</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>phastCons30way_mammalian</td>
+        <td>99.96</td>
+        <td>100.00</td>
+        <td>99.94</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>phastCons17way_primate</td>
+        <td>99.92</td>
+        <td>100.00</td>
+        <td>99.90</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>SiPhy</td>
+        <td>97.98</td>
+        <td>99.88</td>
+        <td>97.09</td>
+        <td>O</td>
+      </tr>
+      <tr>
+        <td>bStatistic</td>
+        <td>98.24</td>
+        <td>98.93</td>
+        <td>98.02</td>
+        <td>O</td>
+      </tr>
+    </table><br>
+
+    <img src="Figure-1.png" title="Figure 1"><br><br>
+Figure 1. Overview of strategies for InMeRF and InMeRF-CADD. In InMeRF-CADD, pathogenic and common nsSNVs in CADD instead of HGMD and dbSNP were used to compare with other tools under the same conditions.<br>
+    <br><br>
+
+  </div>
+    
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+
