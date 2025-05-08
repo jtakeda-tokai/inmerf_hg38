@@ -1,0 +1,8 @@
+# InMeRF (hg38)
+## Abstract
+### The Individual Meta Random Forest (InMeRF) is a tool to predict the pathogenicity of nonsynonymous SNVs (nsSNVs) using 150 independent models that were individually generated for all possible amino acid (AA) substitutions. This version is using 34 rank scores in dbNSFP v4.0a as feature values.
+## Materials and Methods
+### 1. A total of 72,556 pathogenic nsSNVs were extracted from the Human Gene Mutation Database (HGMD) Pro 2015.2 [CLASS = DM (disease-causing mutation)] included in dbNSFP v4.0a.
+### 2. A total of 166,161 common nsSNV candidates were extracted from dbNSFP v4.0a based on dbSNP build 151 with at least one minor allelic frequency (MAF) of 1000Gp3_AF, UK10K_AF, ExAC_AF, gnomAD_exomes_AF and gnomAD_genomes_AF is > 0.001. We then filtered 162,918 common nsSNVs by removing nsSNVs included in HGMD and in dbNSFP v4.0a with “clinvar_clnsig = Pathogenic or Likely_pathogenic”.
+### 3. Each nsSNV was classified into one of 150 different nonsynonymous AA substitutions. The pathogenic nsSNVs were sorted in ascending order of MAF, and the common nsSNVs were sorted in descending order of MAF. The same numbers of pathogenic and common nsSNVs were extracted for each AA substitution for random forest (RF) modeling.
+### 4. Among 37 tools in dbNSFP v4.0a, nsSNV coverages of 3 tools were very low in either pathogenic or common nsSNVs. Therefore, rank scores of the remaining 34 tools in dbNSFP v4.0a were used as feature values (Table 1). To make RF models, nsSNVs that lacked one or more of 34 rank scores in dbNSFP v4.0a were excluded. Then, pathogenic and common nsSNVs were discriminated by using a machine learning library, scikit-learn, on Python version 3.7. Finally, a total of 150 RF models were generated (Figure 1).
