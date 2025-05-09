@@ -288,4 +288,4 @@ Please cite: Jun-ichi Takeda, Kentaro Nanatsue, Ryosuke Yamagishi, Mikako Ito, N
 ## Related tools
 - [InMeRF (hg19)](https://github.com/jtakeda-tokai/inmerf_hg19.git): To predict the pathogenicity of nonsynonymous SNVs (nsSNVs).
 - [IntSplice2 (hg19/hg38)](https://github.com/jtakeda-tokai/intsplice2.git): To predict the pathogenicity of SNVs occurring at positions -50 to -3 upstream of the 3' splice site of introns.
-- [FexSplice (hg19/hg38)](https://github.com/jtakeda-tokai/fexsplice.git): To predict the pathogenicity of SNV at the first nucleotide of an exon (Fex-SNV) only when the reference base is G.
+- [FexSplice (hg19/hg38)](https://github.com/jtakeda-tokai/fexsplice.git): To predict the pathogenicity of SNVs at the first nucleotide of exons (Fex-SNVs) only when the reference base is G.
