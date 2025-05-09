@@ -286,6 +286,6 @@ Figure 1. Overview of strategies for InMeRF and InMeRF-CADD. In InMeRF-CADD, pat
 ## Publication
 Please cite: Jun-ichi Takeda, Kentaro Nanatsue, Ryosuke Yamagishi, Mikako Ito, Nobuhiko Haga, Hiromi Hirata, Tomoo Ogi, and Kinji Ohno. “InMeRF: Prediction of pathogenicity of missense variants by individual modeling for each amino acid substitution” NAR Genom Bioinform. 2020 May 26;2(2):lqaa038 ([PMID: 33543123](https://pubmed.ncbi.nlm.nih.gov/33543123/)).
 ## Related tools
-[InMeRF (hg19)](https://github.com/jtakeda-tokai/inmerf_hg19.git)\
-[IntSplice2 (hg19/hg38)](https://github.com/jtakeda-tokai/intsplice2.git)\
-[FexSplice (hg19/hg38)](https://github.com/jtakeda-tokai/fexsplice.git)
+- [InMeRF (hg19)](https://github.com/jtakeda-tokai/inmerf_hg19.git): To predict the pathogenicity of nonsynonymous SNVs (nsSNVs).
+- [IntSplice2 (hg19/hg38)](https://github.com/jtakeda-tokai/intsplice2.git): To predict the pathogenicity of SNVs occurring at positions -50 to -3 upstream of the 3' splice site of introns.
+- [FexSplice (hg19/hg38)](https://github.com/jtakeda-tokai/fexsplice.git): To predict the pathogenicity of SNV at the first nucleotide of an exon (Fex-SNV) only when the reference base is G.
